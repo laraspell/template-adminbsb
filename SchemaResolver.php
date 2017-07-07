@@ -29,9 +29,4 @@ class SchemaResolver extends BaseSchemaResolver
         return $fieldSchema;
     }
 
-    protected function resolveInputDatepicker($colName, array $fieldSchema, $tableName)
-    {
-        
-    }
-
 }
