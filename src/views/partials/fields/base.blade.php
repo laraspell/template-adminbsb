@@ -6,7 +6,6 @@ $required = isset($required)? (bool) $required : false;
 $error_message = $errors->first($name);
 $left_icon = isset($left_icon)? $left_icon : null;
 $right_icon = isset($right_icon)? $right_icon : null;
-$help = "Lorem ipsum dolor sit amet.";
 ?>
 
 <div id="{{ $id }}" class="form-group {{ $error_message? 'has-error' : '' }}">

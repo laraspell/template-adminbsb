@@ -1,6 +1,8 @@
 <?php
 
-use LaraSpell\SchemaResolver as BaseSchemaResolver;
+namespace LaraSpells\Template\AdminBsb;
+
+use LaraSpells\Generator\SchemaResolver as BaseSchemaResolver;
 
 class SchemaResolver extends BaseSchemaResolver
 {
@@ -22,6 +24,17 @@ class SchemaResolver extends BaseSchemaResolver
         'datetimepicker',
         'timepicker',
     ];
+
+    /**
+     * Fill route schema
+     *
+     * @param array &$schema
+     */
+    protected function fillRouteSchema(array &$schema)
+    {
+        parent::fillRouteSchema($schema);
+        data_fill($schema, 'route.middleware', 'auth');
+    }
 
     protected function resolveFieldInputCkeditor($colName, array $fieldSchema, $tableName)
     {
