@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div class="body">
-		@if(count($pagination['items']))
+		@if($pagination->items())
 		<div class="table-responsive">
 		  {? table.html ?}
 		</div>
