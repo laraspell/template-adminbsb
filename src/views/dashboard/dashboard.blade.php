@@ -11,28 +11,28 @@
     <div class="col-md-3">
       @include('admin::partials.infobox', [
         'icon' => 'home',
-        'hover_effect' => 'zoom',
         'count' => 50,
         'label' => 'Count Data',
+        'hover_effect' => 'zoom',
         'icon_classes' => 'bg-blue',
       ])
     </div>
     <div class="col-md-3">
       @include('admin::partials.infobox', [
         'icon' => 'home',
-        'hover_effect' => 'expand',
         'count' => 50,
         'label' => 'Count Data',
         'color' => 'blue',
+        'hover_effect' => 'expand',
       ])
     </div>
     <div class="col-md-3">
       @include('admin::partials.infobox', [
         'icon' => 'home',
-        'hover_effect' => 'expand',
         'count' => 50,
         'label' => 'Count Data',
         'color' => 'blue',
+        'hover_effect' => 'expand',
         'right_icon' => true,
         'solid_color' => true,
       ])
@@ -40,9 +40,9 @@
     <div class="col-md-3">
       @include('admin::partials.infobox', [
         'icon' => 'home',
-        'hover_effect' => 'zoom',
         'count' => 50,
         'label' => 'Count Data',
+        'hover_effect' => 'zoom',
         'right_icon' => true,
         'icon_color' => 'blue'
       ])
