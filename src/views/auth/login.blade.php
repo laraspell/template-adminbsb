@@ -26,7 +26,7 @@
     <link href="{{ asset('admin-template/css/style.css') }}" rel="stylesheet">
 </head>
 
-<body class="login-page">
+<body class="login-page bg-blue">
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">{? schema.name ?}</a>
@@ -38,12 +38,7 @@
           <i class="fa fa-warning"></i> {{ $errors->first('email') }}
         </div>
         @endif
-        @if(session('info'))
-        <div class="alert alert-info">
-          <b class="close" data-dismiss="alert">&times;</b>
-          <i class="fa fa-info-circle"></i> {{ session('info') }}
-        </div>
-        @endif
+        @include('{? view_namespace ?}partials.alert-messages')
         <div class="card">
             <div class="body">
                 <form id="sign_in" method="POST">
