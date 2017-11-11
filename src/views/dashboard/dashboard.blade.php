@@ -1,7 +1,7 @@
-@extends('admin::layout.master')
+@extends('{? view_namespace ?}layout.master')
 
 @section('content')
-  @include('admin::partials.alert-messages')
+  @include('{? view_namespace ?}partials.alert-messages')
   
   <div class="block-header">
       <h2>Dashboard</h2>
@@ -9,7 +9,7 @@
   
   <div class="row">
     <div class="col-md-3">
-      @include('admin::partials.infobox', [
+      @include('{? view_namespace ?}partials.infobox', [
         'icon' => 'home',
         'count' => 50,
         'label' => 'Count Data',
@@ -18,7 +18,7 @@
       ])
     </div>
     <div class="col-md-3">
-      @include('admin::partials.infobox', [
+      @include('{? view_namespace ?}partials.infobox', [
         'icon' => 'home',
         'count' => 50,
         'label' => 'Count Data',
@@ -27,7 +27,7 @@
       ])
     </div>
     <div class="col-md-3">
-      @include('admin::partials.infobox', [
+      @include('{? view_namespace ?}partials.infobox', [
         'icon' => 'home',
         'count' => 50,
         'label' => 'Count Data',
@@ -38,7 +38,7 @@
       ])
     </div>
     <div class="col-md-3">
-      @include('admin::partials.infobox', [
+      @include('{? view_namespace ?}partials.infobox', [
         'icon' => 'home',
         'count' => 50,
         'label' => 'Count Data',
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  @component('admin::partials.card', [
+  @component('{? view_namespace ?}partials.card', [
     'title' => 'Dashboard',
     'description' => 'This is default dashboard page.'
   ])
