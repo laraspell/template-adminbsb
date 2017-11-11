@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraSpells\Template\AdminLte\Generators;
+namespace LaraSpells\Template\AdminBsb\Generators;
 
 use LaraSpells\Generator\Generators\ControllerGenerator;
 use LaraSpells\Generator\Generators\MethodGenerator;

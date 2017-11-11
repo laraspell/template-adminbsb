@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraSpells\Template\AdminLte\Generators;
+namespace LaraSpells\Template\AdminBsb\Generators;
 
 use LaraSpells\Generator\Generators\ViewCreateGenerator;
 use LaraSpells\Generator\Schema\Table;
