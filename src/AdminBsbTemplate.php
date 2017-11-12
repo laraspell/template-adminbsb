@@ -51,12 +51,12 @@ class AdminBsbTemplate extends Template
     public function beforeReports()
     {
         // Write form-model configuration file if not exists
-        $hasFormModel = (bool) array_filter($this->getSchema()->getTables(), function($table) {
+        $usingFormModel = (bool) array_filter($this->getSchema()->getTables(), function($table) {
             return (bool) $table->get('form_model');
         });
 
         $configPath = 'config/form-model.php';
-        if ($hasFormModel && !$this->hasFile($configPath)) {
+        if ($usingFormModel && !$this->hasFile($configPath)) {
             $stub = file_get_contents(__DIR__.'/stubs/config.form-model.stub');
             $viewNamespace = $this->getSchema()->getViewNamespace();
             $configContent = $this->renderStub($stub, [
