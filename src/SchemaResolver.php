@@ -36,7 +36,7 @@ class SchemaResolver extends BaseSchemaResolver
         data_fill($schema, 'route.middleware', 'auth');
     }
 
-    protected function resolveFieldInputCkeditor($colName, array $fieldSchema, $tableName)
+    protected function resolveFieldInputCkeditor($colName, array $fieldSchema, $tableName, $tableSchema)
     {
         data_fill($fieldSchema, 'display', 'html');
         return $fieldSchema;

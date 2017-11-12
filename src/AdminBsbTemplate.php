@@ -48,6 +48,24 @@ class AdminBsbTemplate extends Template
         $this->generateDashboardController();
     }
 
+    public function beforeReports()
+    {
+        // Write form-model configuration file if not exists
+        $hasFormModel = (bool) array_filter($this->getSchema()->getTables(), function($table) {
+            return (bool) $table->get('form_model');
+        });
+
+        $configPath = 'config/form-model.php';
+        if ($hasFormModel && !$this->hasFile($configPath)) {
+            $stub = file_get_contents(__DIR__.'/stubs/config.form-model.stub');
+            $viewNamespace = $this->getSchema()->getViewNamespace();
+            $configContent = $this->renderStub($stub, [
+                'view_namespace' => $viewNamespace ? $viewNamespace.'::' : ''
+            ]);
+            $this->generateFile($configPath, $configContent);
+        }
+    }
+
     protected function addAuthRoutes()
     {
         $routePrefix = $this->getSchema()->getRoutePrefix();
