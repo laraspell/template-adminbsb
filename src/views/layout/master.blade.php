@@ -59,7 +59,10 @@
       <div class="navbar-header">
         <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
         <a href="javascript:void(0);" class="bars"></a>
-        <a class="navbar-brand" href="/">{? schema.name ?}</a>
+        <a class="navbar-brand" href="/">
+          <img src="{{ asset('admin-template/img/logo-laraspells.png') }}" alt="" class="logo">
+          <span>{? schema.name ?}</span>
+        </a>
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse">
         @include('{? view_namespace ?}layout.navbar-nav')

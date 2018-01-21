@@ -5,3 +5,14 @@
 .no-margin {
 	margin: 0px !important;
 }
+
+.navbar-brand img.logo {
+	height: 32px;
+	float: left;
+	margin-top: -6px;
+	margin-right: 10px;
+}
+
+.navbar-brand span {
+	font-size: 1.2em;
+}
