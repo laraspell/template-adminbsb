@@ -77,7 +77,8 @@ class AdminBsbTemplate extends Template
             $group = $routeGenerator->addRouteGroup([
                 'name' => $routeName.'auth.',
                 'prefix' => $routePrefix.'/auth',
-                'domain' => $routeDomain
+                'domain' => $routeDomain,
+                'namespace' => $this->getRouteNamespace(),
             ]);
 
             $group->addRoute('get', 'login', $this->authController.'@showLoginForm', [
@@ -103,10 +104,13 @@ class AdminBsbTemplate extends Template
         $routeGenerator = $this->getRouteCollector();
         $routeName = $this->getSchema()->getRouteName('dashboard');
         $routeDomain = $this->getSchema()->getRouteDomain();
+        $namespace = $this->getRouteNamespace();
+
+        $controller = $namespace ? $namespace.'\\'.$this->dashboardController : $this->dashboardController;
 
         if (!$this->hasRouteNamed($routeName)) {
             $routeName = $this->getSchema()->getRouteName();
-            $this->getRouteCollector()->addRoute('get', $routePrefix, $this->dashboardController.'@pageDashboard', [
+            $this->getRouteCollector()->addRoute('get', $routePrefix, $controller.'@pageDashboard', [
                 'name' => $routeName.'dashboard',
                 'middleware' => 'auth',
                 'domain' => $routeDomain
@@ -142,6 +146,12 @@ class AdminBsbTemplate extends Template
         ]);
 
         $this->putController($this->dashboardController, $result);
+    }
+
+    protected function getRouteNamespace()
+    {
+        $controllerNamespace = $this->getSchema()->getControllerNamespace();
+        return trim(str_replace('App\Http\Controllers\\', '', $controllerNamespace), '\\');
     }
 
 }
