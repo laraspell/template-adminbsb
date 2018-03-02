@@ -9,6 +9,7 @@ class SchemaResolver extends BaseSchemaResolver
 
     protected $availableInputTypes = [
         'text', 
+        'password', 
         'textarea',
         'file',
         'image',

@@ -11,6 +11,7 @@
 		  	{? form.fields ?}
 		  
 		    {!! csrf_field() !!}
+		    {!! method_field('PUT') !!}
 		    <a class='btn btn-lg btn-default m-t-15 waves-effect' href="{{ route('{? route_list ?}') }}">Cancel</a>
 		    <button class='btn btn-lg btn-primary m-t-15 waves-effect'>Save</button>
 		</form>
